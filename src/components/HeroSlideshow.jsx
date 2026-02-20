@@ -69,7 +69,7 @@ export default function HeroSlideshow() {
             transition={{ duration: 0.6 }}
             className="text-white font-serif font-semibold tracking-tight text-4xl sm:text-5xl md:text-6xl"
           >
-            Welcome to FEC
+            Welcome to PIS
           </motion.h1>
 
           <motion.p
