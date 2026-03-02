@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 /**
  * Responsive Navbar with:
@@ -8,56 +9,58 @@ import { AnimatePresence, motion } from "framer-motion";
  * ✅ Sticky + blur + premium look
  *
  * Notes:
- * - This version uses href anchors (#about etc). If you want routes, tell me and I’ll convert to <Link to="/...">
+ * - This version uses to anchors (#about etc). If you want routes, tell me and I’ll convert to <Link to="/...">
+ *
+ * ✅ UPDATED: PURE GREEN NAV BACKGROUND + WHITE TEXT
  */
 
 const navItems = [
-  { label: "Home", href: "#" },
+  { label: "Home", to: "/" },
 
   {
     label: "About",
-    href: "#about",
+    to: "#about",
     children: [
-      { label: "Welcome to FEC", href: "#welcome" },
-      { label: "History", href: "#history" },
-      { label: "Success Stories", href: "#success" },
+      { label: "Welcome to PIS", to: "/welcome" },
+      { label: "History", to: "#history" },
+      { label: "Success Stories", to: "/success" },
     ],
   },
 
   {
     label: "Academics",
-    href: "#academics",
+    to: "#academics",
     children: [
-      { label: "Curriculum Overview", href: "#curriculum" },
-      { label: "O-Level Results", href: "#results" },
-      { label: "Kindergarten", href: "#kg" },
-      { label: "Primary", href: "#primary" },
-      { label: "Junior", href: "#junior" },
-      { label: "Senior", href: "#senior" },
+      { label: "Curriculum Overview", to: "/curriculum" },
+      { label: "O-Level Results", to: "/results" },
+      { label: "Kindergarten", to: "/kg" },
+      { label: "Primary", to: "/primary" },
+      { label: "Junior", to: "/junior" },
+      { label: "Senior", to: "/senior" },
     ],
   },
 
   {
     label: "Student Life",
-    href: "#life",
+    to: "#life",
     children: [
-      { label: "Beyond the Classroom", href: "#beyond" },
-      { label: "Extra Curricular", href: "#extracurricular" },
-      { label: "School Events", href: "#events" },
+      { label: "Beyond the Classroom", to: "/beyond" },
+      { label: "Extra Curricular", to: "/extracurricular" },
+      { label: "School Events", to: "/events" },
     ],
   },
 
   {
     label: "Admission",
-    href: "#admission",
+    to: "#admission",
     children: [
-      { label: "Application Process", href: "#application-process" },
-      { label: "Application Form", href: "#application-form" },
+      { label: "Application Process", to: "/application-process" },
+      // { label: "Application Form", to: "#application-form" },
     ],
   },
 
-  { label: "Career", href: "#career" },
-  { label: "Contact", href: "#contact" },
+  { label: "Career", to: "/career" },
+  { label: "Contact", to: "/contact" },
 ];
 
 // Animations
@@ -143,26 +146,28 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div className="bg-black/25 backdrop-blur-xl border-b border-white/10">
+      {/* ✅ PURE GREEN NAV BACKGROUND */}
+      <div className="bg-emerald-700 border-b border-emerald-500/40 shadow-lg">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between gap-3">
             {/* Brand */}
             <a
-              href="#"
+              to="#"
               className="flex items-center gap-3 select-none"
               onClick={() => {
                 setMobileOpen(false);
                 setActiveDesktop(null);
               }}
             >
-              <div className="h-11 w-11 rounded-full grid place-items-center text-white font-extrabold tracking-wide bg-white/10 border border-white/15">
+              <div className="h-11 w-11 rounded-full grid place-items-center text-white font-extrabold tracking-wide bg-emerald-800 border border-white/15">
                 PIS
               </div>
+
               <div className="hidden sm:block">
                 <div className="text-white font-semibold leading-tight">
                   Pathways International School
                 </div>
-                <div className="text-white/70 text-xs -mt-0.5">
+                <div className="text-white/80 text-xs -mt-0.5">
                   Learn • Grow • Lead
                 </div>
               </div>
@@ -171,10 +176,11 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <nav
               ref={desktopNavRef}
-              className="hidden lg:flex items-center rounded-full bg-black/20 border border-white/10 backdrop-blur px-1 py-1"
+              className="hidden lg:flex items-center rounded-full bg-emerald-800/60 border border-white/15 px-1 py-1"
             >
               {items.map((item, idx) => {
-                const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+                const hasChildren =
+                  Array.isArray(item.children) && item.children.length > 0;
                 const isOpen = activeDesktop === item.label;
 
                 return (
@@ -184,9 +190,9 @@ export default function Navbar() {
                     onMouseEnter={() => hasChildren && setActiveDesktop(item.label)}
                     onMouseLeave={() => hasChildren && setActiveDesktop(null)}
                   >
-                    <a
-                      href={item.href}
-                      className="px-4 py-2 text-sm text-white/90 hover:text-white transition inline-flex items-center gap-1"
+                    <Link
+                      to={item.to}
+                      className="px-4 py-2 text-sm text-white hover:bg-emerald-600/60 rounded-full transition inline-flex items-center gap-1"
                       onClick={() => setActiveDesktop(null)}
                     >
                       {item.label}
@@ -200,7 +206,7 @@ export default function Navbar() {
                           ▾
                         </span>
                       )}
-                    </a>
+                    </Link>
 
                     {/* Dropdown */}
                     <AnimatePresence>
@@ -210,23 +216,23 @@ export default function Navbar() {
                           animate="show"
                           exit="exit"
                           variants={dropdownVariants}
-                          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64"
+                          className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-72"
                         >
-                          <div className="rounded-2xl bg-white/95 text-black shadow-xl border border-black/10 overflow-hidden">
-                            <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-wider text-black/55 border-b border-black/10">
+                          <div className="rounded-2xl bg-white text-black shadow-2xl border border-black/10 overflow-hidden">
+                            <div className="px-4 py-3 text-[11px] font-semibold uppercase tracking-wider text-emerald-700 border-b border-black/10 bg-emerald-50">
                               {item.label}
                             </div>
 
                             <div className="p-2">
                               {item.children.map((child) => (
-                                <a
+                                <Link
                                   key={child.label}
-                                  href={child.href}
-                                  className="block rounded-xl px-3 py-2.5 text-sm text-black/80 hover:text-black hover:bg-black/5 transition"
+                                  to={child.to}
+                                  className="block rounded-xl px-3 py-2.5 text-sm text-black/80 hover:text-emerald-800 hover:bg-emerald-50 transition"
                                   onClick={() => setActiveDesktop(null)}
                                 >
                                   {child.label}
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           </div>
@@ -236,7 +242,7 @@ export default function Navbar() {
 
                     {/* Vertical separator */}
                     {idx !== items.length - 1 && (
-                      <span className="h-5 w-px bg-white/15" />
+                      <span className="h-5 w-px bg-white/20" />
                     )}
                   </div>
                 );
@@ -245,16 +251,16 @@ export default function Navbar() {
 
             {/* Right actions */}
             <div className="flex items-center gap-2">
-              <a
-                href="#admission"
-                className="hidden sm:inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 transition"
+              <Link
+                to="/application-process"
+                className="hidden sm:inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-emerald-800 bg-white hover:bg-emerald-50 border border-white/20 transition"
                 onClick={() => {
                   setMobileOpen(false);
                   setActiveDesktop(null);
                 }}
               >
                 Apply Now
-              </a>
+              </Link>
 
               {/* Mobile toggle */}
               <button
@@ -262,7 +268,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen((v) => !v)}
                 aria-label="Open menu"
                 aria-expanded={mobileOpen}
-                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/15 border border-white/15 transition"
+                className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-800 hover:bg-emerald-900 border border-white/15 transition"
               >
                 {mobileOpen ? (
                   <svg
@@ -273,7 +279,7 @@ export default function Navbar() {
                   >
                     <path
                       fillRule="evenodd"
-                      d="M6.22 6.22a.75.75 0 0 1 1.06 0L12 10.94l4.72-4.72a.75.75 0 1 1 1.06 1.06L13.06 12l4.72 4.72a.75.75 0 1 1-1.06 1.06L12 13.06l-4.72 4.72a.75.75 0 1 1-1.06-1.06L10.94 12 6.22 7.28a.75.75 0 0 1 0-1.06Z"
+                      d="M6.22 6.22a.75.75 0 0 1 1.06 0L12 10.94l4.72-4.72a.75.75 0 1 1 1.06 1.06L13.06 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L12 13.06l-4.72 4.72a.75.75 0 0 1-1.06-1.06L10.94 12 6.22 7.28a.75.75 0 0 1 0-1.06Z"
                       clipRule="evenodd"
                     />
                   </svg>
@@ -305,7 +311,7 @@ export default function Navbar() {
                 transition={{ duration: 0.18 }}
                 className="lg:hidden pb-4"
               >
-                <div className="mt-2 rounded-2xl bg-black/30 border border-white/10 backdrop-blur p-2">
+                <div className="mt-2 rounded-2xl bg-emerald-800 border border-white/15 p-2">
                   {items.map((item, idx) => {
                     const hasChildren =
                       Array.isArray(item.children) && item.children.length > 0;
@@ -314,11 +320,10 @@ export default function Navbar() {
                     return (
                       <div key={item.label}>
                         <div className="flex items-center justify-between">
-                          <a
-                            href={item.href}
-                            className="flex-1 block px-4 py-3 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition"
+                          <Link
+                            to={item.to}
+                            className="flex-1 block px-4 py-3 text-sm font-medium text-white hover:bg-emerald-700 rounded-xl transition"
                             onClick={() => {
-                              // If it has children, don't auto-close, let user choose submenu OR jump to section
                               if (!hasChildren) {
                                 setMobileOpen(false);
                                 setMobileExpanded(null);
@@ -326,12 +331,12 @@ export default function Navbar() {
                             }}
                           >
                             {item.label}
-                          </a>
+                          </Link>
 
                           {hasChildren && (
                             <button
                               type="button"
-                              className="mr-2 h-10 w-10 grid place-items-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition"
+                              className="mr-2 h-10 w-10 grid place-items-center rounded-xl bg-emerald-700 hover:bg-emerald-600 border border-white/10 transition"
                               aria-label={`Toggle ${item.label}`}
                               aria-expanded={expanded}
                               onClick={() =>
@@ -361,19 +366,19 @@ export default function Navbar() {
                               exit="exit"
                               className="overflow-hidden"
                             >
-                              <div className="ml-2 mr-2 mb-2 mt-1 rounded-2xl bg-white/10 border border-white/10 p-2">
+                              <div className="ml-2 mr-2 mb-2 mt-1 rounded-2xl bg-emerald-700 border border-white/10 p-2">
                                 {item.children.map((child) => (
-                                  <a
+                                  <Link
                                     key={child.label}
-                                    href={child.href}
-                                    className="block rounded-xl px-4 py-2.5 text-sm text-white/90 hover:text-white hover:bg-white/10 transition"
+                                    to={child.to}
+                                    className="block rounded-xl px-4 py-2.5 text-sm text-white hover:bg-emerald-600 transition"
                                     onClick={() => {
                                       setMobileOpen(false);
                                       setMobileExpanded(null);
                                     }}
                                   >
                                     {child.label}
-                                  </a>
+                                  </Link>
                                 ))}
                               </div>
                             </motion.div>
@@ -382,23 +387,23 @@ export default function Navbar() {
 
                         {/* Separator */}
                         {idx !== items.length - 1 && (
-                          <div className="mx-4 h-px bg-white/10" />
+                          <div className="mx-4 h-px bg-white/20" />
                         )}
                       </div>
                     );
                   })}
 
                   <div className="mt-2 px-2">
-                    <a
-                      href="#admission"
+                    <Link
+                      to="/application-process"
                       onClick={() => {
                         setMobileOpen(false);
                         setMobileExpanded(null);
                       }}
-                      className="block text-center w-full rounded-xl px-4 py-3 text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 transition"
+                      className="block text-center w-full rounded-xl px-4 py-3 text-sm font-semibold text-emerald-800 bg-white hover:bg-emerald-50 border border-white/20 transition"
                     >
                       Apply Now
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

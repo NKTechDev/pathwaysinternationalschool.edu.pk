@@ -65,20 +65,20 @@ export default function OurCampuses() {
   const cards = tab === "campus" ? data.campus : data.event;
 
   return (
-    <section className="bg-white text-slate-900 py-16 md:py-20">
+    <section className="bg-gradient-to-b from-emerald-50 to-white text-slate-900 py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 md:mb-10">
-          <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight">
+          <h2 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight text-emerald-900">
             Our Campuses
           </h2>
-          <p className="mt-3 max-w-3xl text-base md:text-lg text-slate-500">
-            Froebel Education Centre is home to three spacious campuses, each offering
-            age-appropriate facilities and large playgrounds.
+          <p className="mt-3 max-w-3xl text-base md:text-lg text-emerald-800/70">
+            Pathways International School is home to three spacious campuses,
+            each offering age-appropriate facilities and inspiring learning environments.
           </p>
 
           {/* Tabs */}
-          <div className="mt-7 flex items-center gap-6">
+          <div className="mt-7 flex items-center gap-8">
             {TABS.map((t) => {
               const active = tab === t.key;
               return (
@@ -86,12 +86,14 @@ export default function OurCampuses() {
                   key={t.key}
                   onClick={() => setTab(t.key)}
                   className={`relative text-lg md:text-xl transition ${
-                    active ? "text-slate-900 font-semibold" : "text-slate-400 hover:text-slate-600"
+                    active
+                      ? "text-emerald-900 font-semibold"
+                      : "text-emerald-500 hover:text-emerald-700"
                   }`}
                 >
                   {t.label}
                   {active && (
-                    <span className="absolute left-0 -bottom-2 h-[2px] w-full bg-blue-600" />
+                    <span className="absolute left-0 -bottom-2 h-[3px] w-full bg-emerald-600 rounded-full" />
                   )}
                 </button>
               );
@@ -103,11 +105,11 @@ export default function OurCampuses() {
         <AnimatePresence mode="wait">
           <motion.div
             key={tab}
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
+            exit={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.35 }}
-            className="grid grid-cols-1 gap-6 md:grid-cols-3"
+            className="grid grid-cols-1 gap-8 md:grid-cols-3"
           >
             {cards.map((c) => (
               <CampusCard key={`${tab}-${c.id}`} item={c} />
@@ -122,29 +124,31 @@ export default function OurCampuses() {
 function CampusCard({ item }) {
   return (
     <motion.div
-      whileHover={{ y: -6 }}
+      whileHover={{ y: -8 }}
       transition={{ type: "spring", stiffness: 250, damping: 20 }}
       className="group"
     >
       <Link to={item.to} className="block">
         {/* Image */}
-        <div className="overflow-hidden rounded-md border border-black/10 bg-slate-100">
+        <div className="overflow-hidden rounded-2xl border border-emerald-100 shadow-lg bg-white">
           <motion.img
             src={item.img}
             alt={item.title}
             loading="lazy"
-            whileHover={{ scale: 1.06 }}
-            transition={{ duration: 0.35 }}
+            whileHover={{ scale: 1.07 }}
+            transition={{ duration: 0.4 }}
             className="h-64 w-full object-cover md:h-72"
           />
         </div>
 
         {/* Text */}
-        <div className="pt-4 text-center">
-          <h3 className="font-serif text-3xl font-bold text-slate-900 underline decoration-slate-300 underline-offset-8 decoration-2">
+        <div className="pt-5 text-center">
+          <h3 className="font-serif text-3xl font-bold text-emerald-900 relative inline-block">
             {item.title}
+            <span className="absolute left-0 -bottom-2 h-[3px] w-full bg-emerald-300 rounded-full opacity-70" />
           </h3>
-          <div className="mt-2 text-sm md:text-base text-slate-500">
+
+          <div className="mt-3 text-sm md:text-base text-emerald-700/70">
             {item.subtitle}
           </div>
         </div>
