@@ -5,7 +5,7 @@ const footerCols = [
   {
     title: "About",
     links: [
-      { label: "Welcome to PIS", to: "/about" },
+      { label: "Welcome to PWIS", to: "/about" },
       { label: "Our History", to: "/history" },
       { label: "Leadership", to: "/leadership" },
     ],
@@ -32,7 +32,6 @@ const footerCols = [
       { label: "Primary Section", to: "/admission/primary" },
       { label: "Junior Section", to: "/admission/junior" },
       { label: "Senior Section", to: "/admission/senior" },
-      { label: "Fee Structure", to: "/fees" },
     ],
   },
 ];
@@ -40,13 +39,35 @@ const footerCols = [
 const school = {
   name: "Pathways International School",
   tagline: "Excellence. Character. Global Learning.",
-  addressLine1: "Citi Housing, Gujranwala",
-  addressLine2: "Punjab, Pakistan",
-  phoneDisplay: "+92 300 0000000",
-  phoneHref: "tel:+923000000000",
-  whatsappNumber: "923000000000",
-  email: "info@pathways.edu.pk",
-  mapHref: "https://www.google.com/maps?q=Citi+Housing+Gujranwala",
+
+  // Address
+  addressLine1: "Marketing Office, HH 45 Commercial",
+  addressLine2: "Near Citi Housing Phase 1, WAFI",
+  city: "Citi Housing, Gujranwala",
+  country: "Punjab, Pakistan",
+  postalCode: "52201",
+
+  // Landline (Primary for calls)
+  landlineDisplay: "+92 55 4283590",
+  landlineHref: "tel:+92554283590",
+
+  // International Call Numbers
+  callUs: {
+    uae: "+971 563628414",
+    uk: "+44 7462 296681",
+    pakistan: "+92 327 7771123"
+  },
+
+  // WhatsApp
+  whatsappNumber: "923277771123",
+
+  // Email
+  email: "info@pathwaysinternationalschool.edu.pk",
+
+  // Map
+  mapHref: "https://www.google.com/maps?q=HH+45+Commercial+WAFI+Citi+Housing+Gujranwala",
+
+  // Social Media
   facebook: "https://facebook.com",
   instagram: "https://instagram.com",
   youtube: "https://youtube.com",
@@ -74,14 +95,12 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <div className="flex items-start gap-4">
               {/* Logo badge */}
-              <div className="h-12 w-12 shrink-0 rounded-2xl border border-white/10 bg-white/5 grid place-items-center shadow-sm">
-                <span className="font-serif text-white tracking-wide">PIS</span>
+              <div className="h-12 w-40 shrink-0 rounded-2xl  grid place-items-center shadow-sm">
+              <img src="logo.png" alt="" />
               </div>
 
               <div>
-                <div className="font-serif text-white text-xl leading-tight">
-                  {school.name}
-                </div>
+              
                 <div className="mt-1 text-sm text-white/55">
                   {school.tagline}
                 </div>
@@ -100,18 +119,18 @@ export default function Footer() {
                     >
                       {school.phoneDisplay}
                     </a>
+                    {/* <br />
                     <a
                       href={`mailto:${school.email}`}
                       className="w-fit hover:text-white transition"
                     >
                       {school.email}
-                    </a>
+                    </a> */}
                   </div>
                 </div>
 
                 {/* Quick actions */}
                 <div className="mt-6 flex flex-wrap gap-2">
-                  <ActionPill href={school.phoneHref} label="Call" />
                   <ActionPill
                     href={`https://wa.me/${school.whatsappNumber}`}
                     label="WhatsApp"
@@ -121,42 +140,7 @@ export default function Footer() {
                 </div>
 
                 {/* Social */}
-                <div className="mt-7 flex items-center gap-3">
-                  <SocialIcon
-                    href={school.facebook}
-                    label="Facebook"
-                    icon={
-                      <path d="M13.5 21v-7h2.4l.6-3H13.5V9.2c0-.9.3-1.5 1.6-1.5H16.7V5.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V11H7.5v3H10v7h3.5z" />
-                    }
-                  />
-                  <SocialIcon
-                    href={school.instagram}
-                    label="Instagram"
-                    icon={
-                      <>
-                        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Z" />
-                        <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
-                        <path d="M17.6 6.3a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z" />
-                      </>
-                    }
-                  />
-                  {/* Optional: YouTube */}
-                  <SocialIcon
-                    href={school.youtube}
-                    label="YouTube"
-                    icon={
-                      <path d="M21.6 7.3a3 3 0 0 0-2.1-2.1C17.6 4.7 12 4.7 12 4.7s-5.6 0-7.5.5A3 3 0 0 0 2.4 7.3 31 31 0 0 0 2 12a31 31 0 0 0 .4 4.7 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.7ZM10.5 15.3V8.7L16 12l-5.5 3.3Z" />
-                    }
-                  />
-                  {/* Optional: LinkedIn */}
-                  <SocialIcon
-                    href={school.linkedin}
-                    label="LinkedIn"
-                    icon={
-                      <path d="M6.5 6.8A1.8 1.8 0 1 1 6.5 3a1.8 1.8 0 0 1 0 3.8ZM5 21V9h3v12H5Zm5 0V9h2.9v1.6h.1c.4-.8 1.5-1.9 3.3-1.9 3.5 0 4.1 2.3 4.1 5.2V21h-3v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-3Z" />
-                    }
-                  />
-                </div>
+              
               </div>
             </div>
           </div>

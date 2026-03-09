@@ -159,19 +159,9 @@ export default function Navbar() {
                 setActiveDesktop(null);
               }}
             >
-              <div className="h-11 w-11 rounded-full grid place-items-center text-white font-extrabold tracking-wide bg-emerald-800 border border-white/15">
-                PIS
-              </div>
-
-              <div className="hidden sm:block">
-                <div className="text-white font-semibold leading-tight">
-                  Pathways International School
-                </div>
-                <div className="text-white/80 text-xs -mt-0.5">
-                  Learn • Grow • Lead
-                </div>
-              </div>
-            </a>
+              <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" class="h-16 w-auto" />
+              </div>            </a>
 
             {/* Desktop Nav */}
             <nav
@@ -198,9 +188,8 @@ export default function Navbar() {
                       {item.label}
                       {hasChildren && (
                         <span
-                          className={`inline-block transition-transform ${
-                            isOpen ? "rotate-180" : "rotate-0"
-                          }`}
+                          className={`inline-block transition-transform ${isOpen ? "rotate-180" : "rotate-0"
+                            }`}
                           aria-hidden="true"
                         >
                           ▾
