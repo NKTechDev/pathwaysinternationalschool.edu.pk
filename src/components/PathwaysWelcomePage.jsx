@@ -44,7 +44,7 @@ export default function PathwaysWelcomePage() {
               </div>
 
               <div className="mt-6">
-                <p className="text-sm font-semibold text-slate-900">[Principal Name]</p>
+                <p className="text-sm font-semibold text-slate-900">Dr.Amir Mukhtar</p>
                 <p className="text-sm text-slate-600">Principal</p>
               </div>
 
@@ -68,7 +68,7 @@ export default function PathwaysWelcomePage() {
             <div className="md:col-span-5">
               <div className="relative overflow-hidden rounded-3xl bg-green-100 ring-1 ring-green-200">
                 <img
-                  src="/images/principal.jpg"
+                  src="amir.jpeg"
                   alt="Principal of Pathways International School"
                   className="h-72 w-full object-cover md:h-[420px]"
                 />

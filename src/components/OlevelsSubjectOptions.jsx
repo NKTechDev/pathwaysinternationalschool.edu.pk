@@ -96,7 +96,7 @@ export default function OlevelsSubjectOptions() {
           <div className="lg:pt-14">
             <div className="rounded-md border border-black/10 overflow-hidden bg-slate-100 shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=1600&q=80"
+                src="o_level.png"
                 alt="Student studying"
                 className="w-full h-[320px] sm:h-[420px] lg:h-[520px] object-cover"
                 loading="lazy"

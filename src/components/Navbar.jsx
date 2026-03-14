@@ -21,7 +21,7 @@ const navItems = [
     label: "About",
     to: "#about",
     children: [
-      { label: "Welcome to PIS", to: "/welcome" },
+      { label: "Welcome to PWIS", to: "/welcome" },
       { label: "History", to: "#history" },
       { label: "Success Stories", to: "/success" },
     ],

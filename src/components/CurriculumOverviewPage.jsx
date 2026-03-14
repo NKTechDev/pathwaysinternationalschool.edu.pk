@@ -12,7 +12,7 @@ export default function CurriculumOverviewPage() {
         {/* Background image */}
         <div className="relative h-[320px] md:h-[420px] overflow-hidden">
           <img
-            src="/images/curriculum/hero.jpg"
+            src="curriculam.png"
             alt="Students learning at Pathways International School"
             className="h-full w-full object-cover"
           />
@@ -91,7 +91,7 @@ export default function CurriculumOverviewPage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="/admissions"
+                href="/application-process"
                 className="rounded-2xl bg-green-700 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-400"
               >
                 Admissions
@@ -109,7 +109,7 @@ export default function CurriculumOverviewPage() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-3xl bg-slate-100 ring-1 ring-slate-200">
               <img
-                src="/images/curriculum/side.jpg"
+                src="cuuriculam_side.png"
                 alt="Student engaged in hands-on learning"
                 className="h-80 w-full object-cover md:h-[520px]"
               />
