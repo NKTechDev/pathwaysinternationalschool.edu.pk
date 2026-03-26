@@ -122,7 +122,7 @@ export default function JuniorSectionPage() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-sm">
               <img
-                src="/images/junior/intro.jpg"
+                src="juniorstudents.png"
                 alt="Junior students activity"
                 className="h-80 w-full object-cover md:h-[520px] hover:scale-105 transition-transform duration-500"
               />

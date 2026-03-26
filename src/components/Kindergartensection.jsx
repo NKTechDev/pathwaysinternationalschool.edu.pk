@@ -8,13 +8,13 @@ import React from "react";
 // TailwindCSS required.
 
 const funPhotos = [
-  { src: "/images/early-years/fun-1.jpg", alt: "Art activity" },
-  { src: "/images/early-years/fun-2.jpg", alt: "Outdoor play" },
-  { src: "/images/early-years/fun-3.jpg", alt: "Happy student" },
-  { src: "/images/early-years/fun-4.jpg", alt: "Sand play" },
-  { src: "/images/early-years/fun-5.jpg", alt: "Group activity" },
-  { src: "/images/early-years/fun-6.jpg", alt: "Stage performance" },
-  { src: "/images/early-years/fun-7.jpg", alt: "Craft work" },
+  { src: "artactivity.png", alt: "Art activity" },
+  { src: "outdooractivity.png", alt: "Outdoor play" },
+  { src: "happystudent.png", alt: "Happy student" },
+  { src: "sandplay.png", alt: "Sand play" },
+  { src: "groupactivity.png", alt: "Group activity" },
+  { src: "stageperformance.png", alt: "Stage performance" },
+  { src: "craftwork.png", alt: "Craft work" },
 ];
 
 export default function EarlyYearsPage() {
@@ -88,7 +88,7 @@ export default function EarlyYearsPage() {
           {/* Center image */}
           <div className="mx-auto w-full max-w-md overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-sm">
             <img
-              src="/images/early-years/nursery-main.jpg"
+              src="nurserystudent.png"
               alt="Nursery students"
               className="h-64 w-full object-cover"
             />
@@ -108,14 +108,14 @@ export default function EarlyYearsPage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <div className="overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-sm">
               <img
-                src="/images/early-years/nursery-1.jpg"
+                src="nursaryactivity.png"
                 alt="Nursery activity"
                 className="h-64 w-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-sm">
               <img
-                src="/images/early-years/nursery-2.jpg"
+                src="nurserycraft.png"
                 alt="Nursery craft"
                 className="h-64 w-full object-cover hover:scale-105 transition-transform duration-500"
               />
@@ -159,7 +159,7 @@ export default function EarlyYearsPage() {
           <div className="md:col-span-5">
             <div className="overflow-hidden rounded-3xl ring-1 ring-slate-200">
               <img
-                src="/images/early-years/kindergarten-teacher.jpg"
+                src="teacherwithstudents.png"
                 alt="Teacher with students"
                 className="h-80 w-full object-cover"
               />

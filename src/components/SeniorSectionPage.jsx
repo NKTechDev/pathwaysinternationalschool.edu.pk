@@ -109,7 +109,7 @@ export default function SeniorSectionPage() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-sm">
               <img
-                src="/images/senior/intro.jpg"
+                src="seniorstudents.png"
                 alt="Senior students activity"
                 className="h-80 w-full object-cover md:h-[520px] hover:scale-105 transition-transform duration-500"
               />

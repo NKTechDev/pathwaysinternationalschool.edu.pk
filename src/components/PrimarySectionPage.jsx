@@ -27,12 +27,12 @@ const team = [
 ];
 
 const activities = [
-  { src: "/images/primary/activity-1.jpg", alt: "Activity 1" },
-  { src: "/images/primary/activity-2.jpg", alt: "Activity 2" },
-  { src: "/images/primary/activity-3.jpg", alt: "Activity 3" },
-  { src: "/images/primary/activity-4.jpg", alt: "Activity 4" },
-  { src: "/images/primary/activity-5.jpg", alt: "Activity 5" },
-  { src: "/images/primary/activity-6.jpg", alt: "Activity 6" },
+  { src: "activity1.png", alt: "Activity 1" },
+  { src: "activity2.png", alt: "Activity 2" },
+  { src: "activity3.png", alt: "Activity 3" },
+  { src: "activity4.png", alt: "Activity 4" },
+  { src: "activity5.png", alt: "Activity 5" },
+  { src: "activity6.png", alt: "Activity 6" },
 ];
 
 export default function PrimarySectionPage() {
@@ -113,7 +113,7 @@ export default function PrimarySectionPage() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-sm">
               <img
-                src="/images/primary/intro.jpg"
+                src="primaryclassroom.png"
                 alt="Primary classroom activity"
                 className="h-80 w-full object-cover md:h-[520px] hover:scale-105 transition-transform duration-500"
               />

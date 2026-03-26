@@ -15,7 +15,7 @@ const sections = [
     description: `At Pathways International School, we are committed to nurturing empathy, compassion, and social responsibility at every level. Our students actively contribute their time and efforts through meaningful initiatives including charity drives, awareness campaigns, and outreach programs.
 
 Through structured community service programs, students engage with partner organizations, participate in literacy and welfare projects, and gain exposure to real-world challenges. These experiences foster leadership, civic responsibility, and a deep understanding of social impact.` ,
-    image: "/images/beyond/community.jpg",
+    image: "community.png",
     reverse: false,
   },
   {
@@ -23,7 +23,7 @@ Through structured community service programs, students engage with partner orga
     description: `We offer students enriching opportunities to explore learning beyond the classroom through carefully curated visits and educational trips. From local heritage sites to international experiences, these excursions broaden perspectives and encourage experiential learning.
 
 Field trips strengthen classroom concepts while building teamwork, independence, and confidence. Students benefit not only academically but socially, as shared experiences create lasting bonds and meaningful memories.` ,
-    image: "/images/beyond/excursions.jpg",
+    image: "outdooractivity.png",
     reverse: true,
   },
   {
@@ -31,7 +31,7 @@ Field trips strengthen classroom concepts while building teamwork, independence,
     description: `Sports play a vital role in holistic development at Pathways International School. We promote physical fitness, discipline, and teamwork through structured sports programs and competitive events.
 
 Students participate in a variety of sports including futsal, basketball, cricket, athletics, and more. Regular competitions and school-wide sporting events cultivate resilience, leadership, and a spirit of healthy competition.` ,
-    image: "/images/beyond/sports.jpg",
+    image: "sports.png",
     reverse: false,
   },
 ];

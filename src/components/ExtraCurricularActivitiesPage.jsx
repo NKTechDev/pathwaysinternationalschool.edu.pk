@@ -89,7 +89,7 @@ export default function ExtraCurricularActivitiesPage() {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200 shadow-lg">
               <img
-                src="/images/eca/featured.jpg"
+                src="stageperformance.png"
                 alt="Students performing"
                 className="h-80 w-full object-cover md:h-[560px] hover:scale-105 transition-transform duration-500"
               />
@@ -99,14 +99,14 @@ export default function ExtraCurricularActivitiesPage() {
               </div>
             </div>
 
-            <div className="mt-4 rounded-2xl bg-emerald-50 p-4 text-sm text-slate-700 ring-1 ring-emerald-100">
+            {/* <div className="mt-4 rounded-2xl bg-emerald-50 p-4 text-sm text-slate-700 ring-1 ring-emerald-100">
               <p className="font-semibold text-slate-900">Quick edit</p>
               <p className="mt-1">
                 Replace images:
                 <span className="ml-2 font-mono text-xs">/images/eca/hero.jpg</span> and
                 <span className="ml-2 font-mono text-xs">/images/eca/featured.jpg</span>
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

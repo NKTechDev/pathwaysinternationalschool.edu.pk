@@ -25,6 +25,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <br />
 
       <Routes>
         <Route
@@ -34,7 +35,6 @@ export default function App() {
               <HeroSlideshow />
               <OurCampuses />
               <OlevelsSubjectOptions />
-              <Footer />
             </>
           }
         />
@@ -60,6 +60,8 @@ export default function App() {
 
 
       </Routes>
+              <Footer />
+
     </>
   );
 }
