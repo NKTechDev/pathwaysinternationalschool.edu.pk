@@ -42,7 +42,7 @@ export default function PrimarySectionPage() {
       <header className="relative">
         <div className="relative h-[280px] md:h-[380px] overflow-hidden">
           <img
-            src="/images/primary/hero.jpg"
+            src="teacherwithstudents.png"
             alt="Primary students"
             className="h-full w-full object-cover"
           />

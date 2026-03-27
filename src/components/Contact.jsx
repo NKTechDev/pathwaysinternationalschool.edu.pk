@@ -61,7 +61,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
+            {/* <div className="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm">
               <h3 className="text-lg font-semibold text-slate-900">School Address</h3>
               <p className="mt-2 text-sm text-slate-600">
                 Replace this with your official campus address.
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   Office Hours: Mon–Fri, 9:00 AM – 4:00 PM
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT FORM SECTION */}

@@ -47,7 +47,7 @@ export default function JuniorSectionPage() {
       <header className="relative">
         <div className="relative h-[280px] md:h-[390px] overflow-hidden">
           <img
-            src="/images/junior/hero.jpg"
+            src="juniorstudents.png"
             alt="Junior Section"
             className="h-full w-full object-cover"
           />

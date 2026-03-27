@@ -40,7 +40,7 @@ export default function SeniorSectionPage() {
       <header className="relative">
         <div className="relative h-[280px] md:h-[390px] overflow-hidden">
           <img
-            src="/images/senior/hero.jpg"
+            src="community.png"
             alt="Senior Section"
             className="h-full w-full object-cover"
           />

@@ -78,7 +78,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden bg-neutral-950 text-white/80">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-emerald-700 via-green-700 to-emerald-900 text-white">
       {/* soft background accents */}
       <div
         aria-hidden

@@ -20,6 +20,7 @@ import SchoolEventsPage from "./components/SchoolEventsPage";
 import AdmissionsPage from "./components/AdmissionsPage";
 import CareersPage from "./components/CareersPage";
 import ContactPage from "./components/Contact";
+import EarlyYearsInformationPage from "./components/EarlyYearPages";
 
 export default function App() {
   return (
@@ -55,12 +56,14 @@ export default function App() {
         <Route path="/application-process" element={<AdmissionsPage />} />
         <Route path="/career" element={<CareersPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/early-years" element={<EarlyYearsInformationPage />} />
+
 
 
 
 
       </Routes>
-              <Footer />
+      <Footer />
 
     </>
   );

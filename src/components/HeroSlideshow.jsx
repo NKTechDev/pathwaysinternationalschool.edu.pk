@@ -6,17 +6,17 @@ export default function HeroSlideshow() {
     () => [
       {
         id: 1,
-        src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=2400&q=80",
+        src: "juniorstudents.png",
         alt: "School Children",
       },
       {
         id: 2,
-        src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2400&q=80",
+        src: "groupactivity.png",
         alt: "Classroom",
       },
       {
         id: 3,
-        src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2400&q=80",
+        src: "stageperformance.png",
         alt: "Graduation",
       },
     ],
@@ -37,7 +37,7 @@ export default function HeroSlideshow() {
   const active = slides[index];
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative bg-gradient-to-br from-emerald-700 via-green-700 to-emerald-900 h-screen w-full overflow-hidden">
       {/* Background Image (Ken Burns) */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -56,11 +56,7 @@ export default function HeroSlideshow() {
         />
       </AnimatePresence>
 
-      {/* ✅ Premium Green Overlays (replacing black) */}
-      <div className="absolute inset-0 bg-emerald-950/45" />
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/70 via-emerald-900/25 to-emerald-950/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/55 via-transparent to-emerald-950/35" />
-
+    
       {/* Subtle glow accents */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-emerald-400/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-48 right-0 h-96 w-96 rounded-full bg-emerald-300/10 blur-3xl" />

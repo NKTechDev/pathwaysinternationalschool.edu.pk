@@ -130,7 +130,7 @@ export default function EarlyYearsPage() {
       <header className="relative">
         <div className="relative h-[280px] md:h-[380px] overflow-hidden">
           <img
-            src="/images/early-years/kindergarten-hero.jpg"
+            src="juniorstudents.png"
             alt="Kindergarten classroom"
             className="h-full w-full object-cover"
           />
